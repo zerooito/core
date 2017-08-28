@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 // components
 import Login from '@/components/Login'
+import Dashboard from '@/components/Dashboard'
 
 Vue.use(Router)
 
@@ -15,7 +16,18 @@ export default new Router({
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: {
+        requireAuth: false
+      }
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard,
+      meta: {
+        requireAuth: true
+      }
     }
   ]
 })

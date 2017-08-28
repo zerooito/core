@@ -41,20 +41,17 @@ export default {
     }
   },
   methods: {
-    handleSubmit: function (e) {
+    handleSubmit (e) {
       e.preventDefault()
 
       this.$auth.login({
         params: this.user,
         method: 'POST',
-        success: function () {
-          console.log('Usuário logado com sucesso.')
-        },
-        error: function () {
-          console.log('Usuário e/ou senha inválidos.')
+        success: function (data) {
+          localStorage.token = data['body']['access_token']
         },
         rememberMe: true,
-        redirect: '/signup'
+        redirect: '/dashboard'
       })
     }
   }

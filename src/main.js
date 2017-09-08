@@ -4,21 +4,23 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import auth from './utils/auth'
-import BootstrapVue from 'bootstrap-vue'
 import VueResource from 'vue-resource'
 import VueSweetAlert from 'vue-sweetalert'
 import MenuBar from './components/MenuBar'
+import Breadcrumb from './components/Breadcrumb'
+import Chartkick from 'chartkick'
+import VueChartkick from 'vue-chartkick'
+// import Chart from 'chart.js'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(VueChartkick, { Chartkick })
 
 Vue.config.productionTip = false
 
-Vue.use(BootstrapVue)
 Vue.use(VueResource)
 Vue.use(VueSweetAlert)
 
 Vue.component('menu-bar', MenuBar)
+Vue.component('breadcrumb', Breadcrumb)
 
 Vue.http.options.root = process.env.API
 

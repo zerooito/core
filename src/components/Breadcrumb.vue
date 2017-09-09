@@ -3,7 +3,7 @@
    <div class="ui breadcrumb">
      <a class="section">Home</a>
      <i class="right angle icon divider"></i>
-     <a class="section active black">Dashboard</a>
+     <div class="active section">Dashboard</div>
    </div>
   </div>
 </template>

@@ -10,7 +10,11 @@ import MenuBar from './components/MenuBar'
 import Breadcrumb from './components/Breadcrumb'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
-// import Chart from 'chart.js'
+
+// only import the icons you use to reduce bundle size
+import 'vue-awesome/icons/flag'
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
 
 Vue.use(VueChartkick, { Chartkick })
 
@@ -19,9 +23,11 @@ Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(VueSweetAlert)
 
+Vue.component('icon', Icon)
 Vue.component('menu-bar', MenuBar)
 Vue.component('breadcrumb', Breadcrumb)
 
+Vue.http.headers.common.AUTHORIZATION = 'Bearer ' + localStorage.token
 Vue.http.options.root = process.env.API
 
 Vue.router = router
@@ -45,8 +51,6 @@ Vue.use(require('@websanova/vue-auth'), {
   fetchData: {url: 'auth/user', method: 'GET'},
   refreshData: {url: 'auth/refresh', method: 'GET', atInit: false}
 })
-
-Vue.http.options.root = process.env.API
 
 /* eslint-disable no-new */
 new Vue({

@@ -23,7 +23,7 @@
 		    	<p>
 		    		<icon name="users" scale="2"></icon> 
 		    		<br><br>
-		    		432
+		    		{{ dashboard.clients }}
 		    	</p>
 		    </div>
 		  </div>
@@ -34,7 +34,7 @@
 		    	<p>
 		    		<icon name="barcode" scale="2"></icon> 
 		    		<br><br>
-		    		432
+		    		{{ dashboard.products }}
 		    	</p>
 		    </div>
 		  </div>
@@ -45,7 +45,7 @@
 		    	<p>
 		    		<icon name="credit-card" scale="2"></icon> 
 		    		<br><br>
-		    		432
+		    		{{ dashboard.cust }}
 		    	</p>
 		    </div>
 		  </div>
@@ -118,17 +118,37 @@ export default {
       chartData: [['Jan', 4], ['Feb', 2], ['Mar', 10], ['Apr', 5], ['May', 3]],
       dashboard: {
         orders: 'R$ 0,00',
-        clients: 0
+        clients: 0,
+        products: 0,
+        cust: 0
       }
     }
   },
   created: function () {
     this.totalOrders()
+    this.countClients()
+    this.countProducts()
+    this.custProducts()
   },
   methods: {
     totalOrders () {
       this.$http.get('http://localhost:8090' + '/v1/orders/total').then((response) => {
         this.dashboard.orders = response.body.total
+      })
+    },
+    countClients () {
+      this.$http.get('http://localhost:8090/v1/clients/count').then((response) => {
+        this.dashboard.clients = response.body.count
+      })
+    },
+    countProducts () {
+      this.$http.get('http://localhost:8090/v1/products/count').then((response) => {
+        this.dashboard.products = response.body.count
+      })
+    },
+    custProducts () {
+      this.$http.get('http://localhost:8090/v1/products/cust').then((response) => {
+        this.dashboard.cust = response.body.cust !== null ? response.body.cust : 0
       })
     }
   }

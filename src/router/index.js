@@ -31,7 +31,7 @@ export default new Router({
       }
     },
     {
-      path: '/vendas',
+      path: '/sales',
       name: 'Sales',
       component: Sales,
       meta: {

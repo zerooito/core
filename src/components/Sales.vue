@@ -3,7 +3,6 @@
 		<menu-bar></menu-bar>
 
 		<breadcrumb></breadcrumb>
-
 	</div>
 </template>
 

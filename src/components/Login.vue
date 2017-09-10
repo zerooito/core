@@ -2,7 +2,7 @@
   <div class="ui grid">
     <div class="eight wide column landing-image"></div>
     <div class="four wide column box-center">
-      <h1>Acesse o Sistema</h1>
+      <h1>Sign up</h1>
 
       <form v-on:submit="handleSubmit($event)">
         <div class="ui form segment">
@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="field">
-            <label>Senha</label>
+            <label>Password</label>
             <div class="ui left labeled icon input">
               <input type="password" placeholder="Digite sua Senha" v-model="user.password">
             </div>
@@ -49,6 +49,11 @@ export default {
         method: 'POST',
         success: function (data) {
           localStorage.token = data['body']['access_token']
+        },
+        error: function (data) {
+          if (data.status === 401) {
+            this.$swal('User not found or data wrong!')
+          }
         },
         rememberMe: true,
         redirect: '/dashboard'

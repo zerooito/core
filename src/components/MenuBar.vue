@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="ui pointing menu">
-      <a class="item active">
+      <a class="item active" href="/#/dashboard">
         Dashboard
       </a>
-      <a class="item">
-        Vendas
+      <a class="item" href="/#/sales">
+        Sales
       </a>
       <a class="item">
-        Produtos
+        Products
       </a>
       <div class="right menu">
         <div class="item">
           <div class="ui transparent icon input">
-            <input type="text" placeholder="Buscar...">
+            <input type="text" placeholder="Search...">
             <i class="search link icon"></i>
           </div>
         </div>

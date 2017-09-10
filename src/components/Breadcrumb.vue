@@ -1,9 +1,11 @@
 <template>
   <div class="intern">
    <div class="ui breadcrumb">
-     <a class="section">Home</a>
+     <a class="section" href="/#/dashboard">Home</a>
      <i class="right angle icon divider"></i>
-     <div class="active section">Dashboard</div>
+     <div class="active section">
+      <a :href="currentRoute.link">{{ currentRoute.name }}</a>
+     </div>
    </div>
   </div>
 </template>
@@ -14,3 +16,17 @@
     	margin: 20px;
 	}
 </style>
+
+<script>
+export default {
+  name: 'breadcrumb',
+  data () {
+    return {
+      currentRoute: {
+        name: this.$route.name,
+        link: '/#' + this.$route.path
+      }
+    }
+  }
+}
+</script>

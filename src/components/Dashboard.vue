@@ -86,29 +86,27 @@ export default {
   },
   methods: {
     totalOrders () {
-      this.$http.get('http://localhost:8090' + '/v1/orders/total').then((response) => {
+      this.$http.get(process.env.API + '/v1/orders/total').then((response) => {
         this.dashboard.orders = response.body.total
       })
     },
     countClients () {
-      this.$http.get('http://localhost:8090/v1/clients/count').then((response) => {
+      this.$http.get(process.env.API + '/v1/clients/count').then((response) => {
         this.dashboard.clients = response.body.count
       })
     },
     countProducts () {
-      this.$http.get('http://localhost:8090/v1/products/count').then((response) => {
+      this.$http.get(process.env.API + '/v1/products/count').then((response) => {
         this.dashboard.products = response.body.count
       })
     },
     custProducts () {
-      this.$http.get('http://localhost:8090/v1/products/cust').then((response) => {
+      this.$http.get(process.env.API + '/v1/products/cust').then((response) => {
         this.dashboard.cust = response.body.cust !== null ? response.body.cust : 0
       })
     },
     loadChart () {
-      this.$http.get('http://localhost:8090/v1/orders/load').then((response) => {
-        console.log([['Jan', 4], ['Feb', 2], ['Mar', 10], ['Apr', 5], ['May', 3]])
-        console.log(response.body)
+      this.$http.get(process.env.API + '/v1/orders/load').then((response) => {
         this.chartData = response.body
       })
     }

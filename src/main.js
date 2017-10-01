@@ -8,14 +8,16 @@ import VueResource from 'vue-resource'
 import VueSweetAlert from 'vue-sweetalert'
 import MenuBar from './components/MenuBar'
 import Breadcrumb from './components/Breadcrumb'
+import Footer from './components/Footer'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
+import Vuetable from 'vuetable-2'
 
-// only import the icons you use to reduce bundle size
 import 'vue-awesome/icons/flag'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 
+Vue.use(Vuetable, { Vuetable })
 Vue.use(VueChartkick, { Chartkick })
 
 Vue.config.productionTip = false
@@ -26,6 +28,8 @@ Vue.use(VueSweetAlert)
 Vue.component('icon', Icon)
 Vue.component('menu-bar', MenuBar)
 Vue.component('breadcrumb', Breadcrumb)
+Vue.component('vuetable', Vuetable)
+Vue.component('footer-component', Footer)
 
 Vue.http.headers.common.AUTHORIZATION = 'Bearer ' + localStorage.token
 Vue.http.options.root = process.env.API

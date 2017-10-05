@@ -1,11 +1,12 @@
 <template>
 	<div>
-		<menu-bar></menu-bar>
+		
+    <menu-bar></menu-bar>
 
 		<breadcrumb></breadcrumb>
 
     <div class="ui container">
-      <vuetable ref="vuetable" api-url="https://vuetable.ratiw.net/api/users" :fields="fields" pagination-path="" @vuetable:pagination-data=" ">
+      <vuetable ref="vuetable" api-url="http://localhost:8000/v1/orders" :fields="fields" pagination-path="" @vuetable:pagination-data=" " :http-options="options">
         <template slot="actions" scope="props">
           <div class="table-button-container">
             <button class="ui button" @click="editRow(props.rowData)">
@@ -19,7 +20,6 @@
       </vuetable>
     </div>
 
-    <footer-component></footer-component>
 	</div>
 </template>
 
@@ -35,7 +35,12 @@ export default {
   name: 'sales',
   data () {
     return {
-      fields: ['name', 'email', 'birthdate', 'nickname', 'gender', '__slot:actions']
+      fields: ['order_id', 'value', 'cust', 'name', 'date_order', '__slot:actions'],
+      options: {
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.token
+        }
+      }
     }
   },
   created: function () {},

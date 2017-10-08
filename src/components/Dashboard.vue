@@ -52,8 +52,10 @@
   		  <div class="sixteen wide column"></div>
 		  	<line-chart :data="chartData"></line-chart>
 		  </div>
-		</div>
-	</div>
+      
+      <footer-component></footer-component>
+    </div>
+  </div>
 </template>
 
 <style type="text/css" scoped>

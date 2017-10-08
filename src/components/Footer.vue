@@ -6,10 +6,8 @@
 	          <div class="three wide column">
 	            <h4 class="ui inverted header">Site</h4>
 	            <div class="ui inverted link list">
-	              <a href="#" class="item">Link One</a>
-	              <a href="#" class="item">Link Two</a>
-	              <a href="#" class="item">Link Three</a>
-	              <a href="#" class="item">Link Four</a>
+	              <a href="#" class="item">Princing</a>
+	              <a href="#" class="item">About Us</a>
 	            </div>
 	          </div>
 	          <div class="three wide column">
@@ -23,22 +21,22 @@
 	          <div class="three wide column">
 	            <h4 class="ui inverted header">Platform</h4>
 	            <div class="ui inverted link list">
-	              <a href="#" class="item">Link One</a>
-	              <a href="#" class="item">Link Two</a>
-	              <a href="#" class="item">Link Three</a>
-	              <a href="#" class="item">Link Four</a>
+	              <a href="#" class="item">Docs</a>
 	            </div>
 	          </div>
 	          <div class="seven wide column">
-	            <h4 class="ui inverted header">CiaWN</h4>
+	            <h4 class="ui inverted header">CiaWN\Core</h4>
 	            <p>This product is builded Winners licensed by MIT.</p>
+
+	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/quality-score.png?b=master"> 
+	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/build.png?b=master"> 
+	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/coverage.png?b=master">
 	          </div>
 	        </div>
 	        <div class="ui inverted section divider"></div>
 	        <img src="http://www.ciawn.com.br/images/logo.png" class="ui centered image">
 	        <br>
 	        <div class="ui horizontal inverted small divided link list">
-	          <a class="item" href="#">Site Map</a>
 	          <a class="item" href="#">Support</a>
 	          <a class="item" href="#">Terms and Conditions</a>
 	          <a class="item" href="#">Privacy Policy</a>

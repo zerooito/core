@@ -1,4 +1,6 @@
-# core
+# CiaWN\Core
+
+![dashboard](https://user-images.githubusercontent.com/7466894/31319437-d2a7a6ce-ac39-11e7-8cd4-d95aa31ddabf.png)
 
 > A project Vue.js to core Winners
 

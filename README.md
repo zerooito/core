@@ -13,7 +13,7 @@ Fork the repository, edit and submit a pull request.
 
 Please be very clear on your commit messages and pull request, empty pull request messages may be rejected without reason.
 
-Your code standards should match the PSR coding standards. We use an automated code scanner to check for most basic mistakes - if the test fails your pull request will be rejected.
+Your code standards should match the ESLINT coding standards. We use an automated code scanner to check for most basic mistakes - if the test fails your pull request will be rejected.
 
 ## Screenshot
 

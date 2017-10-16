@@ -7,7 +7,7 @@
       <a class="item" href="/#/sales">
         Sales
       </a>
-      <a class="item">
+      <a class="item" href="/#/products">
         Products
       </a>
       <div class="right menu">

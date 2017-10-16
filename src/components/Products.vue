@@ -5,7 +5,7 @@
 		<breadcrumb></breadcrumb>
 
     <div class="ui container">
-      <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/orders" 
+      <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/products" 
                 :fields="fields" pagination-path="" 
                 @vuetable:pagination-data=" " :http-options="options">
         <template slot="actions" scope="props">
@@ -39,28 +39,22 @@ export default {
     return {
       fields: [
         {
-          name: 'order_id',
+          name: 'id',
           title: '#',
           callback: 'formatID'
         },
         {
-          name: 'value',
-          title: 'Value',
-          callback: 'moneyFormat'
-        },
-        {
-          name: 'cust',
-          title: 'Cust',
-          callback: 'moneyFormat'
+          name: 'sku',
+          title: 'SKU'
         },
         {
           name: 'name',
-          title: 'Name Client'
+          title: 'Name Product'
         },
         {
-          name: 'date_order',
-          title: 'Date Order',
-          callback: 'replaceDateOrder'
+          name: 'price',
+          title: 'Price',
+          callback: 'moneyFormat'
         },
         '__slot:actions'
       ],

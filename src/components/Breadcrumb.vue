@@ -1,5 +1,5 @@
 <template>
-  <div class="intern" v-if="currentRoute.name != 'Dashboard'">
+  <div class="intern" v-if="currentRoute.name != 'Dashboard' && currentRoute.name != 'Login'">
    <div class="ui breadcrumb">
      <router-link v-bind:to="{ name: 'Dashboard' }" class="section">Dashboard</router-link>
      <i class="right angle icon divider"></i>

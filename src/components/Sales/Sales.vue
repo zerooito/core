@@ -1,28 +1,18 @@
 <template>
-	<div>		
-    <menu-bar></menu-bar>
-
-		<breadcrumb></breadcrumb>
-
-    <div class="ui container">
-      <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/products" 
-                :fields="fields" pagination-path="" 
-                @vuetable:pagination-data=" " :http-options="options">
-        <template slot="actions" scope="props">
-          <div class="table-button-container">
-            <button class="ui button" @click="editRow(props.rowData)">
-              <i class="fa fa-edit"></i> Edit
-            </button>
-            <button class="ui basic red button" @click="deleteRow(props.rowData)">
-              <i class="fa fa-remove"></i> Delete
-            </button>
-          </div>
-        </template>
-      </vuetable>
-    </div>
-
-    <footer-component></footer-component>
-	</div>
+  <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/orders"
+            :fields="fields" pagination-path=""
+            @vuetable:pagination-data=" " :http-options="options">
+    <template slot="actions" slot-scope="props">
+      <div class="table-button-container">
+        <button class="ui button" @click="editRow(props.rowData)">
+          <i class="fa fa-edit"></i> Edit
+        </button>
+        <button class="ui basic red button" @click="deleteRow(props.rowData)">
+          <i class="fa fa-remove"></i> Delete
+        </button>
+      </div>
+    </template>
+  </vuetable>
 </template>
 
 <style type="text/css" scoped>
@@ -39,22 +29,28 @@ export default {
     return {
       fields: [
         {
-          name: 'id',
+          name: 'order_id',
           title: '#',
           callback: 'formatID'
         },
         {
-          name: 'sku',
-          title: 'SKU'
+          name: 'value',
+          title: 'Value',
+          callback: 'moneyFormat'
+        },
+        {
+          name: 'cust',
+          title: 'Cust',
+          callback: 'moneyFormat'
         },
         {
           name: 'name',
-          title: 'Name Product'
+          title: 'Name Client'
         },
         {
-          name: 'price',
-          title: 'Price',
-          callback: 'moneyFormat'
+          name: 'date_order',
+          title: 'Date Order',
+          callback: 'replaceDateOrder'
         },
         '__slot:actions'
       ],

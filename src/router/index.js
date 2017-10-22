@@ -39,7 +39,7 @@ export default new Router({
       name: 'Sales',
       component: Sales,
       meta: {
-        requireAuth: false
+        requireAuth: true
       },
       children: [
         {
@@ -55,7 +55,7 @@ export default new Router({
       name: 'Products',
       component: Products,
       meta: {
-        requireAuth: false
+        requireAuth: true
       },
       children: [
         {

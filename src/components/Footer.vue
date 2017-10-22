@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="$route.name != 'Login'">
 	    <div class="ui inverted vertical footer segment">
 	      <div class="ui center aligned container">
 	        <div class="ui stackable inverted divided grid">
@@ -28,8 +28,8 @@
 	            <h4 class="ui inverted header">CiaWN\Core</h4>
 	            <p>This product is builded Winners licensed by MIT.</p>
 
-	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/quality-score.png?b=master"> 
-	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/build.png?b=master"> 
+	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/quality-score.png?b=master">
+	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/build.png?b=master">
 	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/coverage.png?b=master">
 	          </div>
 	        </div>

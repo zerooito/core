@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="$route.name != 'Login'">
     <div class="ui pointing menu">
       <router-link v-bind:to="{ name: 'Dashboard' }" class="item" active-class="active">Dashboard</router-link>
       <router-link v-bind:to="{ name: 'Sales' }" class="item" active-class="active">Sales</router-link>
@@ -24,11 +24,6 @@
 
 <script>
 export default {
-  name: 'menu-bar',
-  data () {
-    return {
-
-    }
-  }
+  name: 'menu-bar'
 }
 </script>

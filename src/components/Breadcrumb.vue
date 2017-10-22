@@ -1,10 +1,10 @@
 <template>
-  <div class="intern">
+  <div class="intern" v-if="currentRoute.name != 'Dashboard'">
    <div class="ui breadcrumb">
-     <a class="section" href="/#/dashboard">Home</a>
+     <router-link v-bind:to="{ name: 'Dashboard' }" class="section">Dashboard</router-link>
      <i class="right angle icon divider"></i>
      <div class="active section">
-      <a :href="currentRoute.link">{{ currentRoute.name }}</a>
+      <router-link v-bind:to="{ name: currentRoute.name }" class="section">{{currentRoute.name}}</router-link>
      </div>
    </div>
   </div>
@@ -23,9 +23,13 @@ export default {
   data () {
     return {
       currentRoute: {
-        name: this.$route.name,
-        link: '/#' + this.$route.path
+        name: this.$route.name
       }
+    }
+  },
+  watch: {
+    '$route.name' (routeName) {
+      this.currentRoute.name = routeName
     }
   }
 }

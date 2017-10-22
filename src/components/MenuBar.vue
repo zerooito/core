@@ -1,15 +1,9 @@
 <template>
   <div>
     <div class="ui pointing menu">
-      <a class="item active" href="/#/dashboard">
-        Dashboard
-      </a>
-      <a class="item" href="/#/sales">
-        Sales
-      </a>
-      <a class="item" href="/#/products">
-        Products
-      </a>
+      <router-link v-bind:to="{ name: 'Dashboard' }" class="item" active-class="active">Dashboard</router-link>
+      <router-link v-bind:to="{ name: 'Sales' }" class="item" active-class="active">Sales</router-link>
+      <router-link v-bind:to="{ name: 'Products' }" class="item" active-class="active">Products</router-link>
       <div class="right menu">
         <div class="item">
           <div class="ui transparent icon input">

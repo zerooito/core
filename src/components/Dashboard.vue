@@ -1,59 +1,51 @@
 <template>
-	<div>
-		<menu-bar></menu-bar>
+  <div class="ui two column stackable grid">
+    <div class="four wide column">
+      <div class="ui segment">
+        <h2>Total Sales</h2>
 
-		<breadcrumb></breadcrumb>
+        <p>
+          <icon name="area-chart" scale="2"></icon>
+          <br><br>
+          {{ dashboard.orders }}
+        </p>
+      </div>
+    </div>
+    <div class="four wide column">
+      <div class="ui segment">
+        <h2>Total Clients</h2>
 
-		<div class="ui two column stackable grid">
-		  <div class="four wide column">
-		    <div class="ui segment">
-		    	<h2>Total Sales</h2>
+        <p>
+          <icon name="users" scale="2"></icon>
+          <br><br>
+          {{ dashboard.clients }}
+        </p>
+      </div>
+    </div>
+    <div class="four wide column">
+      <div class="ui segment">
+        <h2>Total Products</h2>
 
-		    	<p>
-		    		<icon name="area-chart" scale="2"></icon> 
-		    		<br><br>
-		    		{{ dashboard.orders }}
-		    	</p>
-		    </div>
-		  </div>
-		  <div class="four wide column">
-		    <div class="ui segment">
-		    	<h2>Total Clients</h2>
+        <p>
+          <icon name="barcode" scale="2"></icon>
+          <br><br>
+          {{ dashboard.products }}
+        </p>
+      </div>
+    </div>
+    <div class="four wide column">
+      <div class="ui segment">
+        <h2>Cust all products</h2>
 
-		    	<p>
-		    		<icon name="users" scale="2"></icon> 
-		    		<br><br>
-		    		{{ dashboard.clients }}
-		    	</p>
-		    </div>
-		  </div>
-		  <div class="four wide column">
-		    <div class="ui segment">
-		    	<h2>Total Products</h2>
-
-		    	<p>
-		    		<icon name="barcode" scale="2"></icon> 
-		    		<br><br>
-		    		{{ dashboard.products }}
-		    	</p>
-		    </div>
-		  </div>
-		  <div class="four wide column">
-		    <div class="ui segment">
-		    	<h2>Cust all products</h2>
-
-		    	<p>
-		    		<icon name="credit-card" scale="2"></icon> 
-		    		<br><br>
-		    		{{ dashboard.cust }}
-		    	</p>
-		    </div>
-		  </div>
-  		  <div class="sixteen wide column"></div>
-		  	<line-chart :data="chartData"></line-chart>
-		  </div>
-      
-      <footer-component></footer-component>
+        <p>
+          <icon name="credit-card" scale="2"></icon>
+          <br><br>
+          {{ dashboard.cust }}
+        </p>
+      </div>
+    </div>
+      <div class="sixteen wide column"></div>
+      <line-chart :data="chartData"></line-chart>
     </div>
   </div>
 </template>

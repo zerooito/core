@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <menu-bar></menu-bar>
+		<breadcrumb></breadcrumb>
+
+    <div class="ui container">
+      <router-view></router-view>
+    </div>
+
+    <footer-component></footer-component>
   </div>
 </template>
 

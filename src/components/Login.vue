@@ -47,11 +47,11 @@ export default {
       this.$auth.login({
         params: this.user,
         method: 'POST',
-        success: function (data) {
-          localStorage.token = data['body']['access_token']
+        success: ({ data }) => {
+          localStorage.token = data.access_token
         },
-        error: function (data) {
-          if (data.status === 401) {
+        error: ({ data }) => {
+          if (data.response.status === 422 || data.response.status >= 500) {
             this.$swal('User not found or data wrong!')
           }
         },
@@ -65,7 +65,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  
+
 .landing-image {
   background-image: url('https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?w=940&h=700&auto=compress&cs=tinysrgb') !important;
   background-size: cover !important;

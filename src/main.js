@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import auth from './utils/auth'
-import VueResource from 'vue-resource'
 import VueSweetAlert from 'vue-sweetalert'
 import MenuBar from './components/MenuBar'
 import Breadcrumb from './components/Breadcrumb'
@@ -12,17 +11,25 @@ import Footer from './components/Footer'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
 import Vuetable from 'vuetable-2'
+import VueToastr from '@deveodk/vue-toastr'
 
+import './utils/axios'
 import 'vue-awesome/icons/flag'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
+import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css'
+
+Vue.use(VueToastr, {
+  defaultPosition: 'toast-top-right',
+  defaultType: 'info',
+  defaultTimeout: 1000
+})
 
 Vue.use(Vuetable, { Vuetable })
 Vue.use(VueChartkick, { Chartkick })
 
 Vue.config.productionTip = false
 
-Vue.use(VueResource)
 Vue.use(VueSweetAlert)
 
 Vue.component('icon', Icon)
@@ -30,9 +37,6 @@ Vue.component('menu-bar', MenuBar)
 Vue.component('breadcrumb', Breadcrumb)
 Vue.component('vuetable', Vuetable)
 Vue.component('footer-component', Footer)
-
-Vue.http.headers.common.AUTHORIZATION = 'Bearer ' + localStorage.token
-Vue.http.options.root = process.env.API
 
 Vue.router = router
 
@@ -48,7 +52,7 @@ router.beforeEach((to, from, next) => {
 
 Vue.use(require('@websanova/vue-auth'), {
   auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
-  http: require('@websanova/vue-auth/drivers/http/vue-resource.1.x.js'),
+  http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
   router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
   rolesVar: 'type',
   loginData: {url: 'auth/login', redirect: '/', fetchUser: false},

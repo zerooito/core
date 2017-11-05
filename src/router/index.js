@@ -4,66 +4,55 @@ import Router from 'vue-router'
 // components
 import Login from '@/components/Login'
 import Dashboard from '@/components/Dashboard'
+
 import Sales from '@/components/Sales/Sales'
-import SaleView from '@/components/Sales/SaleView'
+import SalesList from '@/components/Sales/List'
+import SaleView from '@/components/Sales/View'
+
 import Products from '@/components/Products/Products'
-import ProductView from '@/components/Products/ProductView'
+import ProductsList from '@/components/Products/List'
+import ProductCreate from '@/components/Products/Create'
+import ProductEdit from '@/components/Products/Edit'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/',
-      redirect: '/login'
-    },
+    { path: '/', redirect: '/login' },
     {
       path: '/login',
       name: 'Login',
       component: Login,
-      meta: {
-        requireAuth: false
-      }
+      meta: { requireAuth: false }
     },
     {
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard,
-      meta: {
-        requireAuth: true
-      }
+      meta: { requireAuth: true }
     },
     {
       path: '/sales',
-      name: 'Sales',
       component: Sales,
-      meta: {
-        requireAuth: true
-      },
+      meta: { requireAuth: true },
+      redirect: { name: 'Sales' },
       children: [
-        {
-          path: 'view/:id',
-          name: 'SaleView',
-          component: SaleView,
-          props: true
-        }
+        { path: 'list', name: 'Sales', component: SalesList },
+        { path: 'view/:id', name: 'SaleView', component: SaleView, props: true }
       ]
     },
     {
       path: '/products',
-      name: 'Products',
       component: Products,
-      meta: {
-        requireAuth: true
-      },
+      meta: { requireAuth: true },
+      redirect: { name: 'Products' },
       children: [
-        {
-          path: 'view/:id',
-          name: 'ProductView',
-          component: ProductView
-        }
+        { path: 'list', name: 'Products', component: ProductsList },
+        { path: 'create', name: 'ProductCreate', component: ProductCreate },
+        { path: 'edit/:id', name: 'ProductEdit', component: ProductEdit, props: true }
       ]
-    }
+    },
+    { path: '*', redirect: { name: 'Dashboard' } }
   ]
 })

@@ -1,18 +1,28 @@
 <template>
-  <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/products"
-            :fields="fields" pagination-path=""
-            @vuetable:pagination-data=" " :http-options="options">
-    <template slot="actions" slot-scope="props">
-      <div class="table-button-container">
-        <router-link v-bind:to="{ name: 'ProductView', params: { id: props.rowData.id, product: props.rowData } }" class="ui button" tag="button">
-          <i class="fa fa-edit"></i> Edit
-        </router-link>
-        <button class="ui basic red button" @click="deleteRow(props.rowData)">
-          <i class="fa fa-remove"></i> Delete
-        </button>
-      </div>
-    </template>
-  </vuetable>
+  <div class="ui grid">
+    <div class="sixteen wide column">
+      <router-link  v-bind:to="{ name: 'ProductCreate' }" class="ui labeled icon right floated primary button" tag="button">
+        <i class="add circle icon"></i> Create
+      </router-link>
+    </div>
+
+    <div class="sixteen wide column">
+      <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/products"
+              :fields="fields" pagination-path=""
+              @vuetable:pagination-data=" " :http-options="options">
+        <template slot="actions" slot-scope="props">
+          <div class="table-button-container">
+            <router-link v-bind:to="{ name: 'ProductEdit', params: { id: props.rowData.id, product: props.rowData } }" class="ui labeled icon button" tag="button">
+              <i class="edit icon"></i> Edit
+            </router-link>
+            <button class="ui labeled icon red button" @click="deleteRow(props.rowData)">
+              <i class="remove icon"></i> Delete
+            </button>
+          </div>
+        </template>
+      </vuetable>
+    </div>
+  </div>
 </template>
 
 <script>

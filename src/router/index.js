@@ -11,7 +11,8 @@ import SaleView from '@/components/Sales/View'
 
 import Products from '@/components/Products/Products'
 import ProductsList from '@/components/Products/List'
-import ProductView from '@/components/Products/View'
+import ProductCreate from '@/components/Products/Create'
+import ProductEdit from '@/components/Products/Edit'
 
 Vue.use(Router)
 
@@ -48,7 +49,8 @@ export default new Router({
       redirect: { name: 'Products' },
       children: [
         { path: 'list', name: 'Products', component: ProductsList },
-        { path: 'view/:id', name: 'ProductView', component: ProductView, props: true }
+        { path: 'create', name: 'ProductCreate', component: ProductCreate },
+        { path: 'edit/:id', name: 'ProductEdit', component: ProductEdit, props: true }
       ]
     },
     { path: '*', redirect: { name: 'Dashboard' } }

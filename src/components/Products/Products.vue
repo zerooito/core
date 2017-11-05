@@ -4,9 +4,9 @@
             @vuetable:pagination-data=" " :http-options="options">
     <template slot="actions" slot-scope="props">
       <div class="table-button-container">
-        <router-link v-bind:to="{ name: 'ProductView', params: { id: props.rowData.id, product: props.rowData } }" class="ui button" tag="button">
+        <button class="ui button" @click="editRow(props.rowData)">
           <i class="fa fa-edit"></i> Edit
-        </router-link>
+        </button>
         <button class="ui basic red button" @click="deleteRow(props.rowData)">
           <i class="fa fa-remove"></i> Delete
         </button>

@@ -2,18 +2,19 @@
   <div class="ui two column stackable grid">
     <div class="four wide column">
       <div class="ui segment">
-        <h2>Total Sales</h2>
+        <h2>{{ $t('Total Sales', {locale: this.locale}) }}</h2>
 
         <p>
           <icon name="area-chart" scale="2"></icon>
           <br><br>
+          
           {{ dashboard.orders }}
         </p>
       </div>
     </div>
     <div class="four wide column">
       <div class="ui segment">
-        <h2>Total Clients</h2>
+        <h2>{{ $t('Total Clients', {locale: this.locale}) }}</h2>
 
         <p>
           <icon name="users" scale="2"></icon>
@@ -24,7 +25,7 @@
     </div>
     <div class="four wide column">
       <div class="ui segment">
-        <h2>Total Products</h2>
+        <h2>{{ $t('Total Products', {locale: this.locale}) }}</h2>
 
         <p>
           <icon name="barcode" scale="2"></icon>
@@ -35,7 +36,7 @@
     </div>
     <div class="four wide column">
       <div class="ui segment">
-        <h2>Cust all products</h2>
+        <h2>{{ $t('Cust All Products', {locale: this.locale}) }}</h2>
 
         <p>
           <icon name="credit-card" scale="2"></icon>
@@ -62,6 +63,7 @@ export default {
   name: 'dashboard',
   data () {
     return {
+      locale: 'ptbr',
       chartData: [],
       dashboard: {
         orders: 'R$ 0,00',

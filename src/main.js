@@ -12,12 +12,16 @@ import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
 import Vuetable from 'vuetable-2'
 import VueToastr from '@deveodk/vue-toastr'
+import i18n from 'voo-i18n'
 
 import './utils/axios'
 import 'vue-awesome/icons/flag'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 import '@deveodk/vue-toastr/dist/@deveodk/vue-toastr.css'
+import translations from './map'
+
+Vue.use(i18n, translations)
 
 Vue.use(VueToastr, {
   defaultPosition: 'toast-top-right',

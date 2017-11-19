@@ -2,7 +2,7 @@
   <div class="ui grid">
     <div class="sixteen wide column">
       <router-link  v-bind:to="{ name: 'ProductCreate' }" class="ui labeled icon right floated primary button" tag="button">
-        <i class="add circle icon"></i> Create
+        <i class="add circle icon"></i> {{ $t('Create', {locale: getLocale()}) }}
       </router-link>
     </div>
 
@@ -13,10 +13,10 @@
         <template slot="actions" slot-scope="props">
           <div class="table-button-container">
             <router-link v-bind:to="{ name: 'ProductEdit', params: { id: props.rowData.id, product: props.rowData } }" class="ui labeled icon button" tag="button">
-              <i class="edit icon"></i> Edit
+              <i class="edit icon"></i> {{ $t('Edit', {locale: getLocale()}) }}
             </router-link>
             <button class="ui labeled icon red button" @click="deleteRow(props.rowData)">
-              <i class="remove icon"></i> Delete
+              <i class="remove icon"></i> {{ $t('Delete', {locale: getLocale()}) }}
             </button>
           </div>
         </template>
@@ -42,11 +42,11 @@ export default {
         },
         {
           name: 'name',
-          title: 'Name Product'
+          title: this.$t('Name Product', {locale: process.env.LOCALE})
         },
         {
           name: 'price',
-          title: 'Price',
+          title: this.$t('Price', {locale: process.env.LOCALE}),
           callback: 'moneyFormat'
         },
         '__slot:actions'
@@ -63,6 +63,9 @@ export default {
   methods: {
     onPaginationData (paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
+    },
+    getLocale () {
+      return process.env.LOCALE
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)

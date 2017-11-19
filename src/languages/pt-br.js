@@ -22,11 +22,18 @@ export default {
   'Products': 'Produtos',
   'Search...': 'Procurar...',
 
-   // Sales
+  // Sales
   'Value': 'Valor',
   'Edit': 'Editar',
   'Delete': 'Remover',
   'Cust': 'Custo',
   'Name Client': 'Nome Cliente',
-  'Date Order': 'Data Pedido'
+  'Date Order': 'Data Pedido',
+
+  // Products
+  'Create': 'Criar',
+  'Name Product': 'Nome Produto',
+  'Price': 'Preço',
+  'ProductEdit': 'Edição Produto',
+  'Save': 'Salvar'
 }

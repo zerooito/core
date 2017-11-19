@@ -5,10 +5,10 @@
     <template slot="actions" slot-scope="props">
       <div class="table-button-container">
         <button class="ui button" @click="editRow(props.rowData)">
-          <i class="fa fa-edit"></i> Edit
+          <i class="fa fa-edit"></i> {{ $t('Edit', {locale: getLocale()}) }}
         </button>
         <button class="ui basic red button" @click="deleteRow(props.rowData)">
-          <i class="fa fa-remove"></i> Delete
+          <i class="fa fa-remove"></i> {{ $t('Delete', {locale: getLocale()}) }}
         </button>
       </div>
     </template>
@@ -28,21 +28,21 @@ export default {
         },
         {
           name: 'value',
-          title: 'Value',
+          title: this.$t('Value', {locale: process.env.LOCALE}),
           callback: 'moneyFormat'
         },
         {
           name: 'cust',
-          title: 'Cust',
+          title: this.$t('Cust', {locale: process.env.LOCALE}),
           callback: 'moneyFormat'
         },
         {
           name: 'name',
-          title: 'Name Client'
+          title: this.$t('Name Client', {locale: process.env.LOCALE})
         },
         {
           name: 'date_order',
-          title: 'Date Order',
+          title: this.$t('Date Order', {locale: process.env.LOCALE}),
           callback: 'replaceDateOrder'
         },
         '__slot:actions'
@@ -59,6 +59,9 @@ export default {
   methods: {
     onPaginationData (paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
+    },
+    getLocale () {
+      return process.env.LOCALE
     },
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)

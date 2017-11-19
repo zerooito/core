@@ -3,6 +3,5 @@ var prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  API: '"http://api.ciawn.com.br"',
-  LOCALE: '"ptbr"'
+  API: '"http://api.ciawn.com.br"'
 })

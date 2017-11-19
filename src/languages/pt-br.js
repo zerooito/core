@@ -20,5 +20,13 @@ export default {
   'Dashboard': 'Dashboard',
   'Sales': 'Vendas',
   'Products': 'Produtos',
-  'Search...': 'Procurar...'
+  'Search...': 'Procurar...',
+
+   // Sales
+  'Value': 'Valor',
+  'Edit': 'Editar',
+  'Delete': 'Remover',
+  'Cust': 'Custo',
+  'Name Client': 'Nome Cliente',
+  'Date Order': 'Data Pedido'
 }

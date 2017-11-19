@@ -3,6 +3,5 @@ var devEnv = require('./dev.env')
 
 module.exports = merge(devEnv, {
   NODE_ENV: '"testing"',
-  API: '"http://localhost:8000"',
-  LOCALE: '"ptbr"'
+  API: '"http://localhost:8000"'
 })

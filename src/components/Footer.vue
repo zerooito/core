@@ -4,10 +4,10 @@
 	      <div class="ui center aligned container">
 	        <div class="ui stackable inverted divided grid">
 	          <div class="three wide column">
-	            <h4 class="ui inverted header">Site</h4>
+	            <h4 class="ui inverted header">{{ $t('Site', {locale: this.locale}) }}</h4>
 	            <div class="ui inverted link list">
-	              <a href="#" class="item">Princing</a>
-	              <a href="#" class="item">About Us</a>
+	              <a href="#" class="item">{{ $t('Princing', {locale: this.locale}) }}</a>
+	              <a href="#" class="item">{{ $t('About Us', {locale: this.locale}) }}</a>
 	            </div>
 	          </div>
 	          <div class="three wide column">
@@ -19,14 +19,14 @@
 	            </div>
 	          </div>
 	          <div class="three wide column">
-	            <h4 class="ui inverted header">Platform</h4>
+	            <h4 class="ui inverted header">{{ $t('Platform', {locale: this.locale}) }}</h4>
 	            <div class="ui inverted link list">
-	              <a href="#" class="item">Docs</a>
+	              <a href="#" class="item">{{ $t('Docs', {locale: this.locale}) }}</a>
 	            </div>
 	          </div>
 	          <div class="seven wide column">
 	            <h4 class="ui inverted header">CiaWN\Core</h4>
-	            <p>This product is builded Winners licensed by MIT.</p>
+	            <p>{{ $t('This product is builded Winners licensed by MIT.', {locale: this.locale}) }}</p>
 
 	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/quality-score.png?b=master">
 	            <img src="https://scrutinizer-ci.com/g/ciawn/api/badges/build.png?b=master">
@@ -37,9 +37,9 @@
 	        <img src="http://www.ciawn.com.br/images/logo.png" class="ui centered image">
 	        <br>
 	        <div class="ui horizontal inverted small divided link list">
-	          <a class="item" href="#">Support</a>
-	          <a class="item" href="#">Terms and Conditions</a>
-	          <a class="item" href="#">Privacy Policy</a>
+	          <a class="item" href="#">{{ $t('Support', {locale: this.locale}) }}</a>
+	          <a class="item" href="#">{{ $t('Terms and Conditions', {locale: this.locale}) }}</a>
+	          <a class="item" href="#">{{ $t('Privacy', {locale: this.locale}) }}</a>
 	        </div>
 	      </div>
 	    </div>
@@ -67,7 +67,9 @@
 export default {
   name: 'footer',
   data () {
-    return {}
+    return {
+      locale: process.env.LOCALE
+    }
   }
 }
 </script>

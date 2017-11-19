@@ -63,7 +63,7 @@ export default {
   name: 'dashboard',
   data () {
     return {
-      locale: 'ptbr',
+      locale: process.env.LOCALE,
       chartData: [],
       dashboard: {
         orders: 'R$ 0,00',

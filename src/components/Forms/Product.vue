@@ -79,8 +79,8 @@ export default {
       this.product[this.method](url)
         .then(({ data }) => {
           this.$toastr('add', {
-            title: 'Success!',
-            msg: 'Your product has been submited',
+            title: this.$t('Success!', {locale: process.env.LOCALE}),
+            msg: this.$t('Your product has been submited', {locale: process.env.LOCALE}),
             clickClose: false,
             timeout: 3000,
             type: 'success'

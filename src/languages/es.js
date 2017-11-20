@@ -39,6 +39,8 @@ export default {
   'Name': 'Nombre',
   'Stock': 'Cantidad',
   'ProductCreate': 'Crear producto',
+  'Your product has been submited': 'Su producto ha sido enviado',
+  'Success!': 'Éxito!',
 
   'Sign Up': 'Entrar',
   'Password': 'Contraseña',

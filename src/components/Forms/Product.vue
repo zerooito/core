@@ -8,30 +8,30 @@
           <has-error class="ui negative message" :form="product" field="sku"></has-error>
         </div>
         <div class="field">
-          <label>Name</label>
-          <input type="text" name="name" placeholder="Name" v-model="product.name" :class="{ 'is-invalid': product.errors.has('name') }">
+          <label>{{ $t('Name', {locale: getLocale()}) }}</label>
+          <input type="text" name="name" :placeholder="$t('Name', {locale: getLocale()})  " v-model="product.name" :class="{ 'is-invalid': product.errors.has('name') }">
           <has-error class="ui negative message" :form="product" field="name"></has-error>
         </div>
       </div>
       <div class="two fields">
         <div class="field">
-          <label>Price</label>
+          <label>{{ $t('Price', {locale: getLocale()}) }}</label>
           <div class="ui labeled input">
             <div class="ui label">$</div>
-            <input type="text" name="price" placeholder="Price" v-model="product.price" :class="{ 'is-invalid': product.errors.has('price') }">
+            <input type="text" name="price" :placeholder="$t('Price', {locale: getLocale()})  " v-model="product.price" :class="{ 'is-invalid': product.errors.has('price') }">
           </div>
           <has-error class="ui negative message" :form="product" field="price"></has-error>
         </div>
         <div class="field">
-          <label>Stock</label>
-          <input type="text" name="stock" placeholder="Stock" v-model="product.stock" :class="{ 'is-invalid': product.errors.has('stock') }">
+          <label>{{ $t('Stock', {locale: getLocale()}) }}</label>
+          <input type="text" name="stock" :placeholder="$t('Stock', {locale: getLocale()})" v-model="product.stock" :class="{ 'is-invalid': product.errors.has('stock') }">
           <has-error class="ui negative message" :form="product" field="stock"></has-error>
         </div>
       </div>
 
       <div class="ui grid">
         <div class="sixteen wide column">
-          <button class="ui right floated primary button" :class="{ loading: product.busy }" :disabled="product.busy" type="submit">Save</button>
+          <button class="ui right floated primary button" :class="{ loading: product.busy }" :disabled="product.busy" type="submit">{{ $t('Save', {locale: getLocale()}) }}</button>
         </div>
       </div>
     </form>
@@ -70,6 +70,9 @@ export default {
     }
   },
   methods: {
+    getLocale () {
+      return process.env.LOCALE
+    },
     save () {
       const url = (this.method === 'post') ? `/v1/products` : `/v1/products/${this.product.sku}`
 

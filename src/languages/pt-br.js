@@ -35,5 +35,13 @@ export default {
   'Name Product': 'Nome Produto',
   'Price': 'Preço',
   'ProductEdit': 'Edição Produto',
-  'Save': 'Salvar'
+  'Save': 'Salvar',
+  'Name': 'Nome',
+  'Stock': 'Quantidade',
+  'ProductCreate': 'Criar Produto',
+
+  'Sign Up': 'Entrar',
+  'Password': 'Senha',
+  'Type your E-mail': 'Digite seu E-mail',
+  'Type your password': 'Digite seu Contraseña'
 }

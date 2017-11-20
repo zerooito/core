@@ -2,20 +2,20 @@
   <div class="ui grid">
     <div class="eight wide column landing-image"></div>
     <div class="four wide column box-center">
-      <h1>Sign up</h1>
+      <h1>{{ $t('Sign Up', {locale: getLocale()}) }}</h1>
 
       <form v-on:submit="handleSubmit($event)">
         <div class="ui form segment">
           <div class="field">
             <label>E-mail</label>
             <div class="ui left labeled icon input">
-              <input type="text" placeholder="Digite seu e-mail" v-model="user.email">
+              <input type="text" :placeholder="$t('Type your E-mail', {locale: getLocale()})" v-model="user.email">
             </div>
           </div>
           <div class="field">
-            <label>Password</label>
+            <label>{{ $t('Password', {locale: getLocale()}) }}</label>
             <div class="ui left labeled icon input">
-              <input type="password" placeholder="Digite sua Senha" v-model="user.password">
+              <input type="password" :placeholder="$t('Type your password', {locale: getLocale()})" v-model="user.password">
             </div>
           </div>
           <div class="ui error message">
@@ -41,6 +41,9 @@ export default {
     }
   },
   methods: {
+    getLocale () {
+      return process.env.LOCALE
+    },
     handleSubmit (e) {
       e.preventDefault()
 

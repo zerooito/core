@@ -45,5 +45,5 @@ export default {
   'Sign Up': 'Entrar',
   'Password': 'Senha',
   'Type your E-mail': 'Digite seu E-mail',
-  'Type your password': 'Digite seu Contraseña'
+  'Type your password': 'Digite sua senha'
 }

@@ -41,6 +41,9 @@ export default {
   'ProductCreate': 'Criar Produto',
   'Your product has been submited': 'Seu produto foi enviado',
   'Success!': 'Sucesso!',
+  'General': 'Geral',
+  'Variations': 'Variações',
+  'Add Variation': 'Adicionar Variação',
 
   'Sign Up': 'Entrar',
   'Password': 'Senha',

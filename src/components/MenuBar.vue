@@ -1,5 +1,6 @@
 <template>
   <div v-if="$route.name != 'Login'">
+    
     <div class="ui pointing menu">
       <router-link v-bind:to="{ path: '/dashboard' }" class="item" active-class="active">
         {{ $t('Dashboard', {locale: this.locale}) }}
@@ -19,6 +20,7 @@
         </div>
       </div>
     </div>
+        
   </div>
 </template>
 

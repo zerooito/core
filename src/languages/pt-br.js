@@ -44,6 +44,9 @@ export default {
   'General': 'Geral',
   'Variations': 'Variações',
   'Add Variation': 'Adicionar Variação',
+  'Remove Variation': 'Remover Variação',
+  'Copy Variation': 'Copiar Variação',
+  'This product has no variations': 'Este produto não possui nenhuma variação.',
 
   'Sign Up': 'Entrar',
   'Password': 'Senha',

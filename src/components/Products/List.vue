@@ -70,11 +70,23 @@ export default {
     onChangePage (page) {
       this.$refs.vuetable.changePage(page)
     },
-    editRow (rowData) {
-      alert('You clicked edit on' + JSON.stringify(rowData))
-    },
     deleteRow (rowData) {
-      alert('You clicked delete on' + JSON.stringify(rowData))
+      this.$swal({
+        title: this.$t('Are you sure?', {locale: process.env.LOCALE}),
+        text: this.$t('You won\'t be able to revert this!', {locale: process.env.LOCALE}),
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: this.$t('Yes, delete it!', {locale: process.env.LOCALE}),
+        cancelButtonText: this.$t('Cancel', {locale: process.env.LOCALE})
+      }).then((result) => {
+        if (result) {
+          this.$http.delete(process.env.API + '/v1/products/' + rowData['sku']).then(({ data }) => {
+            this.$forceUpdate()
+          })
+        }
+      })
     },
     replaceDateOrder (value) {
       this.date = value.match(/\d+/g)

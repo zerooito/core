@@ -48,5 +48,10 @@ export default {
   'Sign Up': 'Entrar',
   'Password': 'Senha',
   'Type your E-mail': 'Digite seu E-mail',
-  'Type your password': 'Digite sua senha'
+  'Type your password': 'Digite sua senha',
+
+  'Are you sure?': 'Você tem certeza?',
+  'You won\'t be able to revert this!': 'Essa ação não pode ser revertida',
+  'Yes, delete it!': 'Sim, deletar isso!',
+  'Cancel': 'Cancelar'
 }

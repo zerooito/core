@@ -1,18 +1,28 @@
 <template>
-  <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/orders"
-            :fields="fields" pagination-path=""
-            @vuetable:pagination-data=" " :http-options="options">
-    <template slot="actions" slot-scope="props">
-      <div class="table-button-container">
-        <button class="ui button" @click="editRow(props.rowData)">
-          <i class="fa fa-edit"></i> {{ $t('Edit', {locale: getLocale()}) }}
-        </button>
-        <button class="ui basic red button" @click="deleteRow(props.rowData)">
-          <i class="fa fa-remove"></i> {{ $t('Delete', {locale: getLocale()}) }}
-        </button>
-      </div>
-    </template>
-  </vuetable>
+  <div class="ui grid">
+    <div class="sixteen wide column">
+      <router-link  v-bind:to="{ name: 'SaleCreate' }" class="ui labeled icon right floated primary button" tag="button">
+        <i class="add circle icon"></i> {{ $t('Start Sales', {locale: getLocale()}) }}
+      </router-link>
+    </div>
+
+    <div class="sixteen wide column">
+      <vuetable ref="vuetable" api-url="http://api.ciawn.com.br/v1/orders"
+                :fields="fields" pagination-path=""
+                @vuetable:pagination-data=" " :http-options="options">
+        <template slot="actions" slot-scope="props">
+          <div class="table-button-container">
+            <button class="ui button" @click="editRow(props.rowData)">
+              <i class="fa fa-edit"></i> {{ $t('Edit', {locale: getLocale()}) }}
+            </button>
+            <button class="ui basic red button" @click="deleteRow(props.rowData)">
+              <i class="fa fa-remove"></i> {{ $t('Delete', {locale: getLocale()}) }}
+            </button>
+          </div>
+        </template>
+      </vuetable>
+    </div>
+  </div>
 </template>
 
 <script>

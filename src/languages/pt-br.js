@@ -56,5 +56,9 @@ export default {
   'Are you sure?': 'Você tem certeza?',
   'You won\'t be able to revert this!': 'Essa ação não pode ser revertida',
   'Yes, delete it!': 'Sim, deletar isso!',
-  'Cancel': 'Cancelar'
+  'Cancel': 'Cancelar',
+
+  'Start Sales': 'Iniciar Vendas',
+  'SalesCreate': 'Criar Venda',
+  'Type to search products...': 'Digite para pesquisar produtos...'
 }

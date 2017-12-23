@@ -8,6 +8,7 @@ import Dashboard from '@/components/Dashboard'
 import Sales from '@/components/Sales/Sales'
 import SalesList from '@/components/Sales/List'
 import SaleView from '@/components/Sales/View'
+import SaleCreate from '@/components/Sales/Create'
 
 import Products from '@/components/Products/Products'
 import ProductsList from '@/components/Products/List'
@@ -39,7 +40,8 @@ export default new Router({
       redirect: { name: 'Sales' },
       children: [
         { path: 'list', name: 'Sales', component: SalesList },
-        { path: 'view/:id', name: 'SaleView', component: SaleView, props: true }
+        { path: 'view/:id', name: 'SaleView', component: SaleView, props: true },
+        { path: 'create', name: 'SaleCreate', component: SaleCreate, props: true }
       ]
     },
     {

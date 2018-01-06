@@ -59,6 +59,7 @@ export default {
   'Cancel': 'Cancelar',
 
   'Start Sales': 'Iniciar Vendas',
-  'SalesCreate': 'Criar Venda',
-  'Type to search products...': 'Digite para pesquisar produtos...'
+  'SaleCreate': 'Criar Venda',
+  'Type to search products...': 'Digite para pesquisar produtos...',
+  'Type quantity products...': 'Digite a quantidade dos produtos...'
 }
